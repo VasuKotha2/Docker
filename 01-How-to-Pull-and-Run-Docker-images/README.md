@@ -32,7 +32,7 @@ Important Notes:
    * HOST_PORT: The port number on your host machine where you want to receive traffic (e.g., 8080).
    * CONTAINER_PORT: The port number within the container that's listening for connections (e.g., 80).
 
-   # Run Docker Container
+    # Run Docker Container
     docker run --name <CONTAINER-NAME> -p <HOST_PORT>:<CONTAINER_PORT> -d <IMAGE_NAME>:<TAG>
 
     # Example using Docker Hub image:
