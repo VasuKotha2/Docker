@@ -9,14 +9,14 @@ In this guide, you will:
 
 # Step 1: Pull Docker Image from Docker Hub
 
-# List Docker images (should be empty if none are pulled yet)
-docker images
+    # List Docker images (should be empty if none are pulled yet)
+    docker images
 
-# Pull Docker image from Docker Hub
-docker pull stacksimplify/mynginx:v1
+    # Pull Docker image from Docker Hub
+    docker pull stacksimplify/mynginx:v1
 
-# Alternatively, pull from GitHub Packages (no download limits)
-docker pull ghcr.io/stacksimplify/mynginx:v1
+    # Alternatively, pull from GitHub Packages (no download limits)
+    docker pull ghcr.io/stacksimplify/mynginx:v1
 
-# List Docker images to confirm the image is pulled
-docker images
+    # List Docker images to confirm the image is pulled
+    docker images
