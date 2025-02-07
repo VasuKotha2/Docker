@@ -40,3 +40,116 @@ Important Notes:
 
     # Or using GitHub Packages image:
     docker run --name myapp1 -p 8080:80 -d ghcr.io/stacksimplify/mynginx:v1
+
+Access the application:
+   * Open your browser and navigate to http://localhost:8080/.
+
+# Step 3: List Running Docker Containers
+
+    # List only running containers
+    docker ps
+
+    # List all containers (including stopped ones)
+    docker ps -a
+
+    # List only container IDs
+    docker ps -q
+
+# Step 4: Connect to Docker Container Terminal
+You can connect to the terminal of a running container to inspect or debug it:
+    
+    # Connect to the container's terminal
+    docker exec -it <CONTAINER-NAME> /bin/sh
+
+    # Example:
+    docker exec -it myapp1 /bin/sh
+
+    # Inside the container, you can run commands:
+    ls
+    hostname
+    exit  # To exit the container's terminal
+
+Execute Commands Directly:
+
+    # List directory contents inside the container
+    docker exec -it myapp1 ls
+
+    # Get the hostname of the container
+    docker exec -it myapp1 hostname
+
+    # Print environment variables
+    docker exec -it myapp1 printenv
+
+    # Check disk space usage
+    docker exec -it myapp1 df -h
+
+# Step 5: Stop and Start Docker Containers
+    # Stop a running container
+    docker stop <CONTAINER-NAME>
+
+    # Example:
+    docker stop myapp1
+
+    # Verify the container has stopped
+    docker ps
+
+    # Test if the application is down
+    curl http://localhost:8080
+
+    # Start the stopped container
+    docker start <CONTAINER-NAME>
+
+    # Example:
+    docker start myapp1
+
+    # Verify the container is running
+    docker ps
+
+    # Test if the application is back up
+    curl http://localhost:8080
+
+# Step 6: Remove Docker Containers
+    # Stop the container if it's still running
+    docker stop <CONTAINER-NAME>
+    docker stop myapp1
+
+    # Remove the container
+    docker rm <CONTAINER-NAME>
+    docker rm myapp1
+
+    # Or stop and remove the container in one command
+    docker rm -f <CONTAINER-NAME>
+    docker rm -f myapp1
+
+# Step 7: Remove Docker Images
+
+    # List Docker images
+    docker images
+
+    # Remove Docker image using Image ID
+    docker rmi <IMAGE-ID>
+
+    # Example:
+    docker rmi abc12345def6
+
+    # Remove Docker image using Image Name and Tag
+    docker rmi <IMAGE-NAME>:<IMAGE-TAG>
+
+    # Example:
+    docker rmi stacksimplify/mynginx:v1
+
+Conclusion
+
+You have successfully learned how to pull Docker images from Docker Hub or GitHub Packages, run containers from those images, interact with running containers, and manage containers and images on your local machine.
+
+Additional Notes
+   * Replace Placeholders: Remember to replace <CONTAINER-NAME>, <HOST_PORT>, <CONTAINER_PORT>, <IMAGE_NAME>, and <TAG> with your actual values.
+   * Docker Hub vs. GitHub Packages: If you encounter Docker Hub pull rate limits, consider using GitHub  Packages (ghcr.io) as an alternative.
+   * Container Names: Giving meaningful names to your containers helps in managing them easily.
+   * Cleanup: Regularly remove unused containers and images to free up disk space.
+
+
+
+
+
+

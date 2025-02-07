@@ -1,0 +1,16 @@
+docker run --name myapp1 -p 8080:80 -d stacksimplify/mynginx:v1
+docker run --name myapp1 -p 8080:80 -d ghcr.io/stacksimplify/mynginx:v1
+docker ps
+docker ps -a
+docker ps -q
+docker exec -it myapp1 /bin/sh
+docker exec -it myapp1 ls
+docker exec -it myapp1 hostname
+docker exec -it myapp1 printenv
+docker exec -it myapp1 df -h
+docker stop myapp1
+docker start myapp1
+docker rm myapp1
+docker rm -f myapp1
+docker images
+docker rmi stacksimplify/mynginx:v1
